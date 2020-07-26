@@ -103,7 +103,7 @@ class Character {
 }
 
 const bill = new Character ("Bill DoreDum", "I used to run a school, now I run this dump", "Bucket")
-const grand = new Character ("Grand Alf", "have you seen two midgets with a ring running around here?", "key")
+const grand = new Character ("Grand Alf Daygrey", "have you seen two midgets with a ring running around here?", "key")
 const yodur = new Character ("Yodur", "backwards I talk, knows why don't I", "luminescent scimitar,")
 const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual,")
 
