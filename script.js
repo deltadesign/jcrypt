@@ -1,7 +1,3 @@
-// player inventory
-let inventory = [];
-
-
 // rooms
 class Room {
   constructor (roomName, description){
@@ -23,7 +19,7 @@ class Room {
     this._character = value;
   }
   describe (){
-    return `You're in the ${this._roomName}, ${this._description}`
+    return `You're in ${this._roomName}, ${this._description}`
   }
   linkRoom (direction, roomToLink) {
     this._linkedRooms[direction] = roomToLink;
@@ -40,13 +36,13 @@ class Room {
 }
 
 // rooms
-
-const room1 = new Room ("Crypt Entrance", "It's cold dark and smelly")
-const room2 = new Room ("Dungeon", "It's creepily quiet")
-const room3 = new Room ("Tunnels", "It's musty and dark")
-const room4 = new Room ("Jailer's Quarters", "It's damp and cold")
-const room5 = new Room ("Jail Cell", "it's horrible")
-const room6 = new Room ("Java's Crypt", "the door is locked, you can't get out",)
+const room1 = new Room ("the Crypt Entrance", "It's cold dark and smelly")
+const room2 = new Room ("the Dungeon", "It's creepily quiet")
+const room3 = new Room ("the Tunnels", "It's musty and dark")
+const room4 = new Room ("the Jailer's Quarters", "It's damp and cold")
+const room5 = new Room ("a Jail Cell", "it's horrible")
+const room6 = new Room ("Java's Crypt", "there's a shadowy figure in the room",)
+const room7 = new Room ("the Open air, freedom!", "you have escaped")
 
 //Room1 links
 room1.linkRoom ("north", room2);
@@ -68,6 +64,9 @@ room4.linkRoom ("east", room1);
 //Room5 links
 room5.linkRoom ("south", room3);
 room5.linkRoom ("west", room2);
+
+//room 6 links 
+room6.linkRoom ("north", room7)
 
 // characters
 class Character {
@@ -91,19 +90,28 @@ class Character {
   talk (){
     return `"${this._description}"`
   }
-  take (){
-    return `"here take this ${gift} I have a feeling you're going to need it"`
+  item (){
+    return `"here take this ${this._gift} I have a feeling you're going to need it"`
+  }
+  action (value){
+    if (value === "talk"){
+      return `"${this._description}"`
+    } else if (value === "take"){
+      return `"here take this ${this._gift} I have a feeling you're going to need it"`;
+    }
   }
 }
 
 const bill = new Character ("Bill DoreDum", "I used to run a school, now I run this dump", "Bucket")
-const grand = new Character ("Grand Alf", "have you seen two midgets with a ring around here?", "key")
-const yodur = new Character ("Yodur", "backwards I talk, knows why not I", "luminescent scimitar")
+const grand = new Character ("Grand Alf", "have you seen two midgets with a ring running around here?", "key")
+const yodur = new Character ("Yodur", "backwards I talk, knows why don't I", "luminescent scimitar,")
+const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual,")
 
 //character locations
 room4.character = bill;
 room3.character = yodur;
 room5.character = grand;
+room6.character = java;
 
 
 // display Room function
@@ -114,8 +122,10 @@ function displayRoominfo(room){
 
   if(room.character != ""){
     document.getElementById("intro").innerHTML = room.character.intro();
+    document.getElementById("convo").innerHTML = "";
   }else{
     document.getElementById("intro").innerHTML = "";
+    document.getElementById("convo").innerHTML = "";
   }
 }
 
@@ -124,7 +134,7 @@ function beginGame (){
   currentRoom = room1;
   displayRoominfo(currentRoom);
 
-    document.addEventListener("keydown",function(event) {
+     document.addEventListener("keydown",function(event) {
       if (event.key === "Enter"){
           let command = document.getElementById("userInput").value.toLowerCase();
           const directions = ["north", "east", "west", "south"]
@@ -134,7 +144,8 @@ function beginGame (){
                 displayRoominfo(currentRoom);
                 document.getElementById("userInput").value ="";
               }else if (commands.includes(command)) {
-                document.getElementById("convo").innerHTML = currentRoom.character(command)
+                document.getElementById("convo").innerHTML = currentRoom.character.action(command)
+                document.getElementById("userInput").value ="";
               }else{
                   alert(command + " is not a valid command");
                   document.getElementById("userInput").value ="";                  
@@ -143,7 +154,10 @@ function beginGame (){
   });
 }
 
+
 beginGame()
 
-console.log("WORK IN PROGRESS")
+
+
+
 
