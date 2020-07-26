@@ -42,7 +42,7 @@ const room3 = new Room ("the Tunnels", "It's musty and dark")
 const room4 = new Room ("the Jailer's Quarters", "It's damp and cold")
 const room5 = new Room ("a Jail Cell", "it's horrible")
 const room6 = new Room ("Java's Crypt", "there's a shadowy figure in the room",)
-const room7 = new Room ("the Open air, freedom!", "you have escaped")
+const room7 = new Room ("the Open air, freedom!", "you have escaped Java's Crypt")
 
 //Room1 links
 room1.linkRoom ("north", room2);
@@ -97,15 +97,16 @@ class Character {
     if (value === "talk"){
       return `"${this._description}"`
     } else if (value === "take"){
+      alert(`${this._name} gave you a ${this._gift}`)
       return `"here take this ${this._gift} I have a feeling you're going to need it"`;
     }
   }
 }
 
 const bill = new Character ("Bill DoreDum", "I used to run a school, now I run this dump", "Bucket")
-const grand = new Character ("Grand Alf Daygrey", "have you seen two midgets with a ring running around here?", "key")
-const yodur = new Character ("Yodur", "backwards I talk, knows why don't I", "luminescent scimitar,")
-const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual,")
+const grand = new Character ("Grand Alf DeGrey", "have you seen two midgets with a ring running around here?", "key")
+const yodur = new Character ("Yodur", "backwards I talk, knows why don't I", "luminescent scimitar")
+const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual")
 
 //character locations
 room4.character = bill;
@@ -156,6 +157,7 @@ function beginGame (){
 
 
 beginGame()
+
 
 
 
