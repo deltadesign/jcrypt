@@ -1,3 +1,11 @@
+//inventory
+var inventory = []
+
+function addItem(item){
+inventory.push(item)
+return document.getElementById("inventory").innerHTML = inventory.toString()
+}
+
 // rooms
 class Room {
   constructor (roomName, description){
@@ -32,7 +40,6 @@ class Room {
       return this;
     }
   }
-
 }
 
 // rooms
@@ -98,6 +105,7 @@ class Character {
       return `"${this._description}"`
     } else if (value === "take"){
       alert(`${this._name} gave you a ${this._gift}`)
+      addItem(this._gift)
       return `"here take this ${this._gift} I have a feeling you're going to need it"`;
     }
   }
@@ -105,7 +113,7 @@ class Character {
 
 const bill = new Character ("Bill DoreDum", "I used to run a school, now I run this dump", "Bucket")
 const grand = new Character ("Grand Alf DeGrey", "have you seen two midgets with a ring running around here?", "key")
-const yodur = new Character ("Yodur", "backwards I talk, knows why don't I", "luminescent scimitar")
+const yodur = new Character ("Yodur", "backwards I talk, knows why I don't", "luminescent scimitar")
 const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual")
 
 //character locations
@@ -157,6 +165,7 @@ function beginGame (){
 
 
 beginGame()
+
 
 
 
