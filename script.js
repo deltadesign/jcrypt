@@ -2,8 +2,8 @@
 var inventory = []
 
 function addItem(item){
-inventory.push(item)
-return document.getElementById("inventory").innerHTML = inventory.toString()
+inventory.push(`<li>${item}</li>`)
+return document.getElementById("inventory").innerHTML = inventory.join('')
 }
 
 // rooms
