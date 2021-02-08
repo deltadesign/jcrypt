@@ -1,26 +1,30 @@
-*
-{
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+
+* {
   background-color: black;
   color: green;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
+  font-family: 'Bungee Hairline', cursive;
   box-sizing: border-box;
 
 }
 
-#container , #box2
-{
+#container , #box2 {
   display: flex;
   align-items: center;
   flex-direction: column;
   border: 1px solid green;
   padding: 15px;
   min-height: 100%;
+  font-weight: bold;
 }
 
-#userInput, #title 
-{
+#userInput {
   display: flex;
   border: 3px solid green;
   padding: 1px;
+  font-weight: bolder;
+}
+
+li {
+  list-style: square;
 }
