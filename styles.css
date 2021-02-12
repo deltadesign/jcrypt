@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap'); /*font-family: 'Bungee Outline', cursive;*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /*font-family: 'Press Start 2P', cursive;*/
 
+body {
+  border: orange 2px solid;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +18,7 @@
   font-size: 4em;
   text-decoration: underline;
   /* border: blueviolet 2px solid; */
+  animation: flash 2.5s forwards;
 }
 
 #container {
@@ -22,35 +27,82 @@
   flex-direction: column;
   padding: 15px;
   font-family: 'Press Start 2P', cursive;
-  /* background: coral; */
+  /* border: coral 2px solid; */
 }
 
 #room {
   width: auto;
   height: 80px;
+  text-align: center;
   padding: 1.2em 0.6em;
-  /* background: cornflowerblue; */
+  /* border: 2px solid cornflowerblue; */
 }
 
 #character p{
   width: auto;
   max-width: 60ch;
-  height: 80px;
+  min-height: 80px;
+  max-height: fit-content;
   padding: 1.2em 0.6em;
   text-align: center;
-  /* background: cornflowerblue; */
+  /* border: orange 2px solid; */
 }
 
 #userInput {
   display: flex;
   margin: 1.2em 0.6em 2.5em 0.6em;
-  padding: 0.5em;
+  padding: 1.5em;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
+  border: green 3px solid;
+  border-radius: 10px;
+}
+
+#userInput:focus{
+  outline: none;
+}
+
+#inventory {
+  max-width: 95%;
+ 
 }
 
 #inventory li {
-  list-style: square;
-  /* border: chartreuse 2px solid; */
+  max-width: 95%;
   margin: 0.75em 0;
+  list-style-type: decimal;
+}
+
+#commands{
+  min-width: 95%;
+  display: flex;
+  position: relative;
+  font-size: 0.6em;
+  bottom: 0;
+  font-family: 'Press Start 2P', cursive;
+  padding: 0 0 0 0.51em;
+}
+
+#commands p {
+  margin: 0 0 0.6em 0.6em;
+}
+
+@media (max-width:768px){
+  #title{
+    font-size: 3em;
+  }
+}
+
+@keyframes flash {
+  0%  {color: white;}
+  10% {color: green;}
+  20% {color: white;}
+  30% {color: green;}
+  40% {color: white;}
+  50% {color: green;}
+  60% {color: white;}
+  70% {color: green;}
+  80% {color: white;}
+  90% {color: green;}
+  100% {color: green;}
 }
