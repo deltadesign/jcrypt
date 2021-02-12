@@ -1,9 +1,12 @@
-//inventory
-var inventory = []
+const inventory = [];
 
 function addItem(item){
-inventory.push(`<li>${item}</li>`)
-return document.getElementById("inventory").innerHTML = inventory.join('')
+  if(inventory.includes(item) === false){
+  inventory.push(`${item}`)
+  }
+  document.getElementById("inventory").innerHTML = inventory.map((cur)=>{
+    return `<li>${cur}</li>`
+  }).join('');
 }
 
 // rooms
@@ -98,7 +101,7 @@ class Character {
     return `"${this._description}"`
   }
   item (){
-    return `"here take this ${this._gift} I have a feeling you're going to need it"`
+    return `"here take this ${this._gift}, I have a feeling you're going to need it"`
   }
   action (value){
     if (value === "talk"){
@@ -112,8 +115,8 @@ class Character {
 }
 
 const bill = new Character ("Bill DoreDum", "I used to run a school, now I run this dump", "Bucket")
-const grand = new Character ("Grand Alf DeGrey", "have you seen two midgets with a ring running around here?", "key")
-const yodur = new Character ("Yodur", "backwards I talk, knows why I don't", "luminescent scimitar")
+const grand = new Character ("Grand Alf DeGrey", "have you seen two midgets with a ring running around here?", "Key")
+const yodur = new Character ("Yodur", "backwards I talk, knows why I don't", "Luminescent scimitar")
 const java = new Character ("Java", "I hope you enjoyed the crypt!", "Java's Crypt training manual")
 
 //character locations

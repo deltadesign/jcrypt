@@ -1,49 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel = "stylesheet" type ="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Java's Crypt</title>
 </head>
 
 <body>
-<div id="container">
-  
-    <h1 id = "title">JAVA'S CRYPT</h1>
- 
-      <div id="room"></div>
-      <br/>
-
-      <div id="character"></div>
-        <p id="intro"></p>
-        <p id="convo"></p>     
-
-      <br/>
-      <input type="textarea" id=userInput></input>
-      <br/>
-      <br/>
-      <p>Player inventory:</p>
-      <ul id="inventory"></ul>
-
-</div>
-
-      <div = id="box2">
-
-        <p>commands:</p>
-
-        <ul>
-          <li>north</li>
-          <li>south</li>
-          <li>east</li>
-          <li>west</li>
-          <li>talk</li>
-          <li>take</li>
-        </ul>
-
-      </div>
-
-    <script src="script.js"></script>
-
+  <div id="container">
+    <h1 id="title">JAVA'S CRYPT</h1>
+    <p id="room"></p>
+    <div id="character">
+      <p id="intro"></p>
+      <p id="convo"></p>
+    </div>
+    <input type="textarea" id=userInput placeholder="your move"></input>
+    <p>Player inventory:</p>
+    <ul id="inventory"></ul>
+  </div>
+  <div id="commands">
+    <p>commands:</p>
+      <p>north.</p>
+      <p>south.</p>
+      <p>east.</p>
+      <p>west.</p>
+      <p>talk.</p>
+      <p>take.</p>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
