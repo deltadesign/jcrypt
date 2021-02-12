@@ -1,9 +1,12 @@
-//inventory
-var inventory = []
+const inventory = [];
 
 function addItem(item){
-inventory.push(`<li>${item}</li>`)
-return document.getElementById("inventory").innerHTML = inventory.join('')
+  if(inventory.includes(item) === false){
+  inventory.push(`${item}`)
+  }
+  document.getElementById("inventory").innerHTML = inventory.map((cur)=>{
+    return `<li>${cur}</li>`
+  }).join('');
 }
 
 // rooms
