@@ -19,11 +19,12 @@
 
 #container {
   display: flex;
+  width: 100%;
   align-items: center;
   flex-direction: column;
   padding: 15px;
   font-family: 'Press Start 2P', cursive;
-  /* border: coral 2px solid; */
+  opacity: 0.7;
 }
 
 #room {
@@ -60,7 +61,6 @@
 
 #inventory {
   max-width: 95%;
- 
 }
 
 #inventory li {
@@ -70,13 +70,12 @@
 }
 
 #commands{
-  min-width: 95%;
   display: flex;
-  position: relative;
+  flex-wrap: wrap;
   font-size: 0.6em;
-  bottom: 0;
   font-family: 'Press Start 2P', cursive;
   padding: 0 0 0 0.51em;
+  opacity: 0.5;
 }
 
 #commands p {
@@ -85,7 +84,8 @@
 
 @media (max-width:768px){
   #title{
-    font-size: 3em;
+    font-size: 2.5em;
+    text-align: center;
   }
 }
 
