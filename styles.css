@@ -47,7 +47,7 @@
 
 #userInput {
   display: flex;
-  margin: 1.2em 0.6em 2.5em 0.6em;
+  margin: 1.2em 0.6em 0.5em 0.6em;
   padding: 1.5em;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
@@ -75,6 +75,7 @@
   font-size: 0.6em;
   font-family: 'Press Start 2P', cursive;
   padding: 0 0 0 0.51em;
+  margin-bottom: 2em;
   opacity: 0.5;
 }
 
@@ -86,6 +87,10 @@
   #title{
     font-size: 2.5em;
     text-align: center;
+  }
+
+  #commands p {
+    font-size: 0.8em;
   }
 }
 
